@@ -84,7 +84,7 @@ class _HomeState extends State<Home> {
                           CircleAvatar(
                             radius: 25,
                             foregroundImage: NetworkImage(
-                                'https://media.istockphoto.com/photos/portrait-of-handsome-latino-african-man-picture-id1007763808?s=612x612'),
+                                'https://images.pexels.com/photos/1576119/pexels-photo-1576119.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940'),
                           ),
                           Text(
                               'Mariya invite you to surf at \ncanggu with 7 others'),
