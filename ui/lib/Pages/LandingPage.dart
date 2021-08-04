@@ -52,29 +52,31 @@ class _LandingPageState extends State<LandingPage> {
                     SizedBox(
                       height: 280,
                     ),
-                    Row(
-                      children: [
-                        SizedBox(
-                          height: 10,
-                          width: 20,
-                        ),
-                        Icon(
-                          Icons.location_on_sharp,
-                          color: Colors.white,
-                          size: 25,
-                        ),
-                        SizedBox(
-                          width: 2,
-                        ),
-                        Text(
-                          "2.4km away",
-                          style: TextStyle(
-                            fontWeight: FontWeight.normal,
-                            fontSize: 12,
-                            color: Colors.white,
+                    Container(
+                      child: Row(
+                        children: [
+                          SizedBox(
+                            height: 10,
+                            width: 20,
                           ),
-                        ),
-                      ],
+                          Icon(
+                            Icons.location_on_sharp,
+                            color: Colors.white,
+                            size: 25,
+                          ),
+                          SizedBox(
+                            width: 2,
+                          ),
+                          Text(
+                            "2.4km away",
+                            style: TextStyle(
+                              fontWeight: FontWeight.normal,
+                              fontSize: 12,
+                              color: Colors.white,
+                            ),
+                          ),
+                        ],
+                      ),
                     ),
                     SizedBox(
                       height: 5,
@@ -134,8 +136,8 @@ class _LandingPageState extends State<LandingPage> {
                 decoration: BoxDecoration(
                   image: DecorationImage(
                     fit: BoxFit.fill,
-                    colorFilter: ColorFilter.mode(
-                        Colors.black.withOpacity(0.5), BlendMode.dstOver),
+                    colorFilter: new ColorFilter.mode(
+                        Colors.black.withOpacity(0.9), BlendMode.dstATop),
                     image: AssetImage('./Assets/Bondi.jpg'),
                   ),
                   boxShadow: [
