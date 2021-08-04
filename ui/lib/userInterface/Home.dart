@@ -1,11 +1,30 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:ui/Pages/LandingPage.dart';
 import '../sourceImage/allsrc.dart';
 
 class Home extends StatefulWidget {
   @override
   _HomeState createState() => _HomeState();
 }
+
+// Route _createRoute() {
+//   return PageRouteBuilder(
+//     pageBuilder: (context, animation, secondaryAnimation) => LandingPage(index),
+//     transitionsBuilder: (context, animation, secondaryAnimation, child) {
+//       const begin = Offset(6.0, 6.0);
+//       const end = Offset.zero;
+//       const curve = Curves.fastLinearToSlowEaseIn;
+
+//       var tween = Tween(begin: begin, end: end).chain(CurveTween(curve: curve));
+
+//       return SlideTransition(
+//         position: animation.drive(tween),
+//         child: child,
+//       );
+//     },
+//   );
+// }
 
 class _HomeState extends State<Home> {
   Source s = Source();
@@ -19,7 +38,7 @@ class _HomeState extends State<Home> {
         elevation: 0,
         iconTheme: IconThemeData(color: Colors.blue),
         actions: [
-          FlatButton(
+          TextButton(
             onPressed: () {
               final snackBar = SnackBar(content: Text("Yeh Buddy !"));
               ScaffoldMessenger.of(context).showSnackBar(snackBar);
@@ -89,8 +108,8 @@ class _HomeState extends State<Home> {
                         children: [
                           CircleAvatar(
                             radius: 25,
-                            foregroundImage: NetworkImage(
-                                'https://images.pexels.com/photos/1576119/pexels-photo-1576119.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940'),
+                            foregroundImage:
+                                AssetImage('./Assets/Foreground.jpeg'),
                           ),
                           Text(
                               'Mariya invite you to surf at \ncanggu with 7 others'),
@@ -219,7 +238,7 @@ class _HomeState extends State<Home> {
                       ],
                     ),
                     SizedBox(
-                      height: 25,
+                      height: 20,
                     ),
                     Row(
                       children: [
@@ -248,7 +267,14 @@ class _HomeState extends State<Home> {
                 child: ListView.builder(
                   itemBuilder: (BuildContext context, index) {
                     return InkWell(
-                        onTap: () => print('Bondi Beach'),
+                        onTap: () {
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                              builder: (context) => LandingPage(),
+                            ),
+                          );
+                        },
                         child: Container(
                           margin: EdgeInsets.all(13),
                           height: MediaQuery.of(context).size.height / 6,
@@ -270,8 +296,8 @@ class _HomeState extends State<Home> {
                               decoration: BoxDecoration(
                                   image: DecorationImage(
                                     fit: BoxFit.fill,
-                                    image: NetworkImage(
-                                        s.images[index].toString()),
+                                    image:
+                                        AssetImage(s.images[index].toString()),
                                   ),
                                   borderRadius: BorderRadius.circular(20),
                                   color: Colors.black12),
@@ -298,7 +324,7 @@ class _HomeState extends State<Home> {
                                         width: 6,
                                       ),
                                       Text(
-                                        s.Place[index],
+                                        s.place[index],
                                         style: TextStyle(
                                           fontWeight: FontWeight.bold,
                                         ),
@@ -317,7 +343,7 @@ class _HomeState extends State<Home> {
                                       color: Colors.blue,
                                     ),
                                     Text(
-                                      s.Distance[index].toString(),
+                                      s.distance[index].toString(),
                                       style: TextStyle(color: Colors.blue),
                                     ),
                                     SizedBox(
@@ -329,7 +355,7 @@ class _HomeState extends State<Home> {
                                       width: 5,
                                     ),
                                     Text(
-                                      s.Rating[index].toString(),
+                                      s.rating[index].toString(),
                                       style:
                                           TextStyle(color: Color(0xFFFBC02D)),
                                     ),
@@ -358,7 +384,7 @@ class _HomeState extends State<Home> {
                                               decoration: BoxDecoration(
                                                   image: DecorationImage(
                                                       fit: BoxFit.cover,
-                                                      image: NetworkImage(s
+                                                      image: AssetImage(s
                                                           .visitedImages1[index]
                                                           .toString())),
                                                   border: Border.all(
@@ -379,7 +405,7 @@ class _HomeState extends State<Home> {
                                               decoration: BoxDecoration(
                                                 image: DecorationImage(
                                                     fit: BoxFit.cover,
-                                                    image: NetworkImage(s
+                                                    image: AssetImage(s
                                                         .visitedImages2[index]
                                                         .toString())),
                                                 border: Border.all(
@@ -399,7 +425,7 @@ class _HomeState extends State<Home> {
                                               decoration: BoxDecoration(
                                                   image: DecorationImage(
                                                       fit: BoxFit.cover,
-                                                      image: NetworkImage(s
+                                                      image: AssetImage(s
                                                           .visitedImages3[index]
                                                           .toString())),
                                                   border: Border.all(
@@ -416,7 +442,7 @@ class _HomeState extends State<Home> {
                                               right: 0,
                                               bottom: 15,
                                               child: Text(
-                                                s.Visitng[index].toString(),
+                                                s.visitng[index].toString(),
                                                 style: TextStyle(
                                                     fontSize: 10,
                                                     fontWeight:
