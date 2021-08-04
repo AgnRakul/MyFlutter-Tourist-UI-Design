@@ -10,20 +10,20 @@ class LandingPage extends StatefulWidget {
 // List<Source> s = s;
 
 class _LandingPageState extends State<LandingPage> {
-  Source s = Source();
-
   @override
   Widget build(BuildContext context) {
     return Material(
         child: Scaffold(
             body: SafeArea(
       child: SingleChildScrollView(
-        child: Container(
-          height: MediaQuery.of(context).size.height,
-          // child: Center(
-          child: Column(children: [
+          child: Container(
+        height: MediaQuery.of(context).size.height,
+        width: MediaQuery.of(context).size.width,
+        // child: Center(
+        child: Column(
+          children: [
             Expanded(
-              flex: 5,
+              flex: 4,
               child: Container(
                 child: Column(
                   children: [
@@ -123,7 +123,7 @@ class _LandingPageState extends State<LandingPage> {
                               )
                             ],
                           ),
-                        )
+                        ),
                       ],
                     )
                   ],
@@ -151,63 +151,101 @@ class _LandingPageState extends State<LandingPage> {
               ),
             ),
             Expanded(
-                flex: 3,
-                child: Container(
-                    height: MediaQuery.of(context).size.height / 2,
-                    child: Container(
-                      margin: EdgeInsets.only(bottom: 200, left: 20),
-                      child: Column(
-                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                        children: [
-                          DefaultTabController(
-                            length: 3,
-                            child: Column(children: [
-                              Theme(
-                                data: ThemeData(
-                                    splashColor: Colors.transparent,
-                                    highlightColor: Colors.transparent),
-                                child: TabBar(
-                                  labelColor: Colors.black,
-                                  unselectedLabelColor: Colors.grey,
-                                  indicatorPadding: EdgeInsets.only(right: 16),
-                                  labelPadding: EdgeInsets.only(right: 16),
-                                  indicator: BoxDecoration(
-                                      color: Colors.white,
-                                      borderRadius: BorderRadius.circular(5)),
-                                  tabs: [
-                                    Tab(
-                                      text: "Overview",
-                                    ),
-                                    Tab(
-                                      text: "Reviews",
-                                    ),
-                                    Tab(
-                                      text: "Friends",
-                                    ),
-                                  ],
-                                ),
+              flex: 2,
+              child: SingleChildScrollView(
+                child: DefaultTabController(
+                  initialIndex: 0,
+                  length: 3,
+                  child: Column(
+                    children: [
+                      Theme(
+                        data: ThemeData(
+                            splashColor: Colors.transparent,
+                            highlightColor: Colors.transparent),
+                        child: Padding(
+                          padding: const EdgeInsets.only(left: 17),
+                          child: TabBar(
+                            labelColor: Colors.black,
+                            unselectedLabelColor: Colors.grey,
+                            indicatorPadding: EdgeInsets.only(right: 16),
+                            labelPadding: EdgeInsets.only(right: 16),
+                            indicator: BoxDecoration(
+                                color: Colors.white,
+                                borderRadius: BorderRadius.circular(5)),
+                            tabs: [
+                              Tab(
+                                text: "Overview",
                               ),
-                              TabBarView(
-                                children: <Widget>[
-                                  Center(
-                                    child: Text("It's cloudy here"),
-                                  ),
-                                  Center(
-                                    child: Text("It's rainy here"),
-                                  ),
-                                  Center(
-                                    child: Text("It's sunny here"),
-                                  ),
-                                ],
+                              Tab(
+                                text: "Reviews",
                               ),
-                            ]),
-                          )
-                        ],
+                              Tab(
+                                text: "Friends",
+                              ),
+                            ],
+                          ),
+                        ),
                       ),
-                    )))
-          ]),
+                      Container(
+                        height: 50,
+                        margin: EdgeInsets.all(10),
+                        child: Padding(
+                          padding: const EdgeInsets.only(
+                            left: 10,
+                          ),
+                          child: TabBarView(
+                            children: <Widget>[
+                              Container(
+                                  decoration: BoxDecoration(
+                                      borderRadius: BorderRadius.circular(30),
+                                      color: Colors.blue.shade50),
+                                  child: Row(
+                                    mainAxisAlignment: MainAxisAlignment.start,
+                                    children: [
+                                      SizedBox(
+                                        width: 20,
+                                      ),
+                                      Icon(Icons.ac_unit),
+                                      SizedBox(
+                                        width: 10,
+                                      ),
+                                      Text('Tide \n5.8ft'),
+                                      SizedBox(
+                                        width: 50,
+                                      ),
+                                      Icon(Icons.ac_unit),
+                                      SizedBox(
+                                        width: 10,
+                                      ),
+                                      Text('Weather \n5.8ft'),
+                                      SizedBox(
+                                        width: 40,
+                                      ),
+                                      Icon(Icons.ac_unit),
+                                      SizedBox(
+                                        width: 10,
+                                      ),
+                                      Text('Wind \n5.8ft'),
+                                    ],
+                                  )),
+                              Container(
+                                child: Center(child: Text("hello")),
+                              ),
+                              Container(
+                                child: Center(child: Text("hello")),
+                              ),
+                            ],
+                          ),
+                        ),
+                      )
+                    ],
+                  ),
+                ),
+              ),
+            ),
+          ],
         ),
-      ),
+      )),
     )));
   }
 }
