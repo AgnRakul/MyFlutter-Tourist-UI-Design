@@ -65,7 +65,7 @@ flutter:
   fonts:
     - family: CustomIcon
       fonts:
-        - asset: Icons/
+        - asset: Icons/CustomIcon.ttf
   #
   # For details regarding fonts from package dependencies,
   # see https://flutter.dev/custom-fonts/#from-packages
