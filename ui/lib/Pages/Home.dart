@@ -1,34 +1,14 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:ui/Pages/LandingPage.dart';
-import '../sourceImage/allsrc.dart';
+import '/Models/Detailsclass.dart';
+import 'LandingPage.dart';
 
 class Home extends StatefulWidget {
   @override
   _HomeState createState() => _HomeState();
 }
 
-// Route _createRoute() {
-//   return PageRouteBuilder(
-//     pageBuilder: (context, animation, secondaryAnimation) => LandingPage(index),
-//     transitionsBuilder: (context, animation, secondaryAnimation, child) {
-//       const begin = Offset(6.0, 6.0);
-//       const end = Offset.zero;
-//       const curve = Curves.fastLinearToSlowEaseIn;
-
-//       var tween = Tween(begin: begin, end: end).chain(CurveTween(curve: curve));
-
-//       return SlideTransition(
-//         position: animation.drive(tween),
-//         child: child,
-//       );
-//     },
-//   );
-// }
-
 class _HomeState extends State<Home> {
-  Source s = Source();
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -260,20 +240,21 @@ class _HomeState extends State<Home> {
               ),
             ),
             Container(
-              height: MediaQuery.of(context).size.height / 1.9,
+              height: MediaQuery.of(context).size.height / 2,
               width: double.infinity,
               child: Container(
                 padding: EdgeInsets.all(5),
                 child: ListView.builder(
+                  itemCount: Detailslist.length,
                   itemBuilder: (BuildContext context, index) {
+                    Details Detailcurrentlist = Detailslist[index];
                     return InkWell(
                         onTap: () {
                           Navigator.push(
-                            context,
-                            MaterialPageRoute(
-                              builder: (context) => LandingPage(),
-                            ),
-                          );
+                              context,
+                              MaterialPageRoute(
+                                  builder: (context) =>
+                                      LandingPage(Detailcurrentlist)));
                         },
                         child: Container(
                           margin: EdgeInsets.all(13),
@@ -297,7 +278,7 @@ class _HomeState extends State<Home> {
                                   image: DecorationImage(
                                     fit: BoxFit.fill,
                                     image:
-                                        AssetImage(s.images[index].toString()),
+                                        NetworkImage(Detailcurrentlist.image),
                                   ),
                                   borderRadius: BorderRadius.circular(20),
                                   color: Colors.black12),
@@ -324,7 +305,7 @@ class _HomeState extends State<Home> {
                                         width: 6,
                                       ),
                                       Text(
-                                        s.place[index],
+                                        Detailcurrentlist.place,
                                         style: TextStyle(
                                           fontWeight: FontWeight.bold,
                                         ),
@@ -343,7 +324,7 @@ class _HomeState extends State<Home> {
                                       color: Colors.blue,
                                     ),
                                     Text(
-                                      s.distance[index].toString(),
+                                      Detailcurrentlist.distance,
                                       style: TextStyle(color: Colors.blue),
                                     ),
                                     SizedBox(
@@ -355,7 +336,7 @@ class _HomeState extends State<Home> {
                                       width: 5,
                                     ),
                                     Text(
-                                      s.rating[index].toString(),
+                                      Detailcurrentlist.rating,
                                       style:
                                           TextStyle(color: Color(0xFFFBC02D)),
                                     ),
@@ -384,9 +365,7 @@ class _HomeState extends State<Home> {
                                               decoration: BoxDecoration(
                                                   image: DecorationImage(
                                                       fit: BoxFit.cover,
-                                                      image: AssetImage(s
-                                                          .visitedImages1[index]
-                                                          .toString())),
+                                                      image: AssetImage('jgj')),
                                                   border: Border.all(
                                                       color: Colors.white,
                                                       width: 3),
@@ -405,9 +384,7 @@ class _HomeState extends State<Home> {
                                               decoration: BoxDecoration(
                                                 image: DecorationImage(
                                                     fit: BoxFit.cover,
-                                                    image: AssetImage(s
-                                                        .visitedImages2[index]
-                                                        .toString())),
+                                                    image: AssetImage('hfgh')),
                                                 border: Border.all(
                                                     color: Colors.white,
                                                     width: 3),
@@ -425,9 +402,7 @@ class _HomeState extends State<Home> {
                                               decoration: BoxDecoration(
                                                   image: DecorationImage(
                                                       fit: BoxFit.cover,
-                                                      image: AssetImage(s
-                                                          .visitedImages3[index]
-                                                          .toString())),
+                                                      image: AssetImage('hhj')),
                                                   border: Border.all(
                                                       color: Colors.white,
                                                       width: 3),
@@ -442,7 +417,7 @@ class _HomeState extends State<Home> {
                                               right: 0,
                                               bottom: 15,
                                               child: Text(
-                                                s.visitng[index].toString(),
+                                                'jhgg',
                                                 style: TextStyle(
                                                     fontSize: 10,
                                                     fontWeight:
@@ -459,7 +434,6 @@ class _HomeState extends State<Home> {
                           ]),
                         ));
                   },
-                  itemCount: s.images.length,
                 ),
               ),
             ),
