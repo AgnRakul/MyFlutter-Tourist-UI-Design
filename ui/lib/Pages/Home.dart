@@ -245,16 +245,16 @@ class _HomeState extends State<Home> {
               child: Container(
                 padding: EdgeInsets.all(5),
                 child: ListView.builder(
-                  itemCount: Detailslist.length,
+                  itemCount: detailslist.length,
                   itemBuilder: (BuildContext context, index) {
-                    Details Detailcurrentlist = Detailslist[index];
+                    Details detailcurrentlist = detailslist[index];
                     return InkWell(
                         onTap: () {
                           Navigator.push(
                               context,
                               MaterialPageRoute(
                                   builder: (context) =>
-                                      LandingPage(Detailcurrentlist)));
+                                      LandingPage(detailcurrentlist)));
                         },
                         child: Container(
                           margin: EdgeInsets.all(13),
@@ -277,8 +277,7 @@ class _HomeState extends State<Home> {
                               decoration: BoxDecoration(
                                   image: DecorationImage(
                                     fit: BoxFit.fill,
-                                    image:
-                                        NetworkImage(Detailcurrentlist.image),
+                                    image: AssetImage(detailcurrentlist.image),
                                   ),
                                   borderRadius: BorderRadius.circular(20),
                                   color: Colors.black12),
@@ -305,7 +304,7 @@ class _HomeState extends State<Home> {
                                         width: 6,
                                       ),
                                       Text(
-                                        Detailcurrentlist.place,
+                                        detailcurrentlist.place,
                                         style: TextStyle(
                                           fontWeight: FontWeight.bold,
                                         ),
@@ -324,7 +323,7 @@ class _HomeState extends State<Home> {
                                       color: Colors.blue,
                                     ),
                                     Text(
-                                      Detailcurrentlist.distance,
+                                      detailcurrentlist.distance,
                                       style: TextStyle(color: Colors.blue),
                                     ),
                                     SizedBox(
@@ -336,7 +335,7 @@ class _HomeState extends State<Home> {
                                       width: 5,
                                     ),
                                     Text(
-                                      Detailcurrentlist.rating,
+                                      detailcurrentlist.rating,
                                       style:
                                           TextStyle(color: Color(0xFFFBC02D)),
                                     ),
@@ -365,7 +364,9 @@ class _HomeState extends State<Home> {
                                               decoration: BoxDecoration(
                                                   image: DecorationImage(
                                                       fit: BoxFit.cover,
-                                                      image: AssetImage('jgj')),
+                                                      image: AssetImage(
+                                                          detailcurrentlist
+                                                              .visitedimage1)),
                                                   border: Border.all(
                                                       color: Colors.white,
                                                       width: 3),
@@ -384,7 +385,9 @@ class _HomeState extends State<Home> {
                                               decoration: BoxDecoration(
                                                 image: DecorationImage(
                                                     fit: BoxFit.cover,
-                                                    image: AssetImage('hfgh')),
+                                                    image: AssetImage(
+                                                        detailcurrentlist
+                                                            .visitedimage2)),
                                                 border: Border.all(
                                                     color: Colors.white,
                                                     width: 3),
@@ -402,7 +405,9 @@ class _HomeState extends State<Home> {
                                               decoration: BoxDecoration(
                                                   image: DecorationImage(
                                                       fit: BoxFit.cover,
-                                                      image: AssetImage('hhj')),
+                                                      image: AssetImage(
+                                                          detailcurrentlist
+                                                              .visitedimage3)),
                                                   border: Border.all(
                                                       color: Colors.white,
                                                       width: 3),
@@ -417,7 +422,7 @@ class _HomeState extends State<Home> {
                                               right: 0,
                                               bottom: 15,
                                               child: Text(
-                                                'jhgg',
+                                                detailcurrentlist.visited,
                                                 style: TextStyle(
                                                     fontSize: 10,
                                                     fontWeight:

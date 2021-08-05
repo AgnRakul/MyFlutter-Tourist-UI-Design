@@ -51,7 +51,7 @@ class LandingPage extends StatelessWidget {
                             children: [
                               SizedBox(
                                 height: 10,
-                                width: 20,
+                                width: 15,
                               ),
                               Icon(
                                 Icons.location_on_sharp,
@@ -59,7 +59,7 @@ class LandingPage extends StatelessWidget {
                                 size: 25,
                               ),
                               SizedBox(
-                                width: 2,
+                                width: 1,
                               ),
                               Text(
                                 detailnewlist.distance,
@@ -92,7 +92,7 @@ class LandingPage extends StatelessWidget {
                               ),
                             ),
                             SizedBox(
-                              width: 110,
+                              width: 130,
                             ),
                             Container(
                               height: 30,
@@ -134,7 +134,7 @@ class LandingPage extends StatelessWidget {
                         fit: BoxFit.fill,
                         colorFilter: new ColorFilter.mode(
                             Colors.black.withOpacity(0.9), BlendMode.dstATop),
-                        image: NetworkImage(detailnewlist.image),
+                        image: AssetImage(detailnewlist.image),
                       ),
                       boxShadow: [
                         BoxShadow(
@@ -193,50 +193,50 @@ class LandingPage extends StatelessWidget {
                             child: TabBarView(
                               children: <Widget>[
                                 Container(
-                                    decoration: BoxDecoration(
-                                        borderRadius: BorderRadius.circular(30),
-                                        color: Colors.blue.shade50),
-                                    child: Row(
-                                      mainAxisAlignment:
-                                          MainAxisAlignment.start,
-                                      children: [
-                                        SizedBox(
-                                          width: 20,
-                                        ),
-                                        Icon(
-                                          Icons.waves_outlined,
-                                          color: Colors.black54,
-                                        ),
-                                        SizedBox(
-                                          width: 10,
-                                        ),
-                                        Text('Tide \n5.8ft'),
-                                        SizedBox(
-                                          width: 70,
-                                        ),
-                                        Icon(
-                                          Icons.wb_sunny_outlined,
-                                          color: Colors.black54,
-                                        ),
-                                        SizedBox(
-                                          width: 10,
-                                        ),
-                                        Text('Weather \n5.8ft'),
-                                        SizedBox(
-                                          width: 50,
-                                        ),
-                                        Icon(
-                                          Icons.air_outlined,
-                                          color: Colors.black54,
-                                        ),
-                                        SizedBox(
-                                          width: 10,
-                                        ),
-                                        Text('Wind \n5.8ft'),
-                                      ],
-                                    )),
+                                  decoration: BoxDecoration(
+                                      borderRadius: BorderRadius.circular(30),
+                                      color: Colors.blue.shade50),
+                                  child: Row(
+                                    mainAxisAlignment: MainAxisAlignment.start,
+                                    children: [
+                                      SizedBox(
+                                        width: 20,
+                                      ),
+                                      Icon(
+                                        Icons.waves_outlined,
+                                        color: Colors.black54,
+                                      ),
+                                      SizedBox(
+                                        width: 10,
+                                      ),
+                                      Text('Tide \n5.8ft'),
+                                      SizedBox(
+                                        width: 60,
+                                      ),
+                                      Icon(
+                                        Icons.wb_sunny_outlined,
+                                        color: Colors.black54,
+                                      ),
+                                      SizedBox(
+                                        width: 10,
+                                      ),
+                                      Text('Weather \n5.8ft'),
+                                      SizedBox(
+                                        width: 40,
+                                      ),
+                                      Icon(
+                                        Icons.air_outlined,
+                                        color: Colors.black54,
+                                      ),
+                                      SizedBox(
+                                        width: 10,
+                                      ),
+                                      Text('Wind \n5.8ft'),
+                                    ],
+                                  ),
+                                ),
                                 Container(
-                                  child: Center(child: Text("hello")),
+                                  child: Center(child: Text("The Review Tabs")),
                                 ),
                                 Container(
                                   child: Center(child: Text("hello")),
